@@ -126,12 +126,16 @@ def Dijkstra(s:int, t:int, G:dict) -> int:
     parent = {s:None}
     dist = {s:0}
     q = [(0, s)]
+    visited = set()
     while q:
         v = heapq.heappop(q)[1]
+        if v in visited: continue
+        visited.add(v)
         for neigh, weight in G[v]:
-            parent[neigh] = v
             d = dist[v] + weight
+            # relaxation of edge
             if neigh not in dist or d < dist[neigh]:
+                p[neigh] = v
                 dist[neigh] = d
                 heapq.heappush(q, (d, neigh))
 

@@ -1,2 +1,2 @@
 # explained
-Algorithms, techniques, approaches and ets
+Algorithms, techniques, approaches and etc

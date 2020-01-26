@@ -10,8 +10,8 @@ def longestPalindrome(self, s: str) -> str:
         # edge cases
         if len(s) < 2: return s
 
-        # modify input to catch center between to letters and handle boundaries
-        # f"@#{"#".join(s)}#$"
+        # modify input to catch center between two letters, handle boundaries
+        # format looks like: "@#{"#".join(s)}#$"
         M = ["@", "#"]
         for x in s:
             M.append(x)

@@ -1,7 +1,23 @@
-# Manacher Algorithm
+# Manacher Algorithm 
 
-Longest Palindromic Substring
-<https://leetcode.com/problems/longest-palindromic-substring/> 
+Time Complexity: O(n)
+Space Complexity: O(n)
+
+Example: Longest Palindromic Substring <https://leetcode.com/problems/longest-palindromic-substring/> 
+
+## Overview:
+Each palindrome has a center.  
+There are two types of palindrome: palindrome with odd length with single char as center, and palindrome with even length with center between two chars.  
+For simplification Manacher algorithm modifies input string to work with palindromes having odd length only.  
+We can say each palindrome has c - center, l - left border or first char, r - right border or last char and d - distance.  
+Distance of palindrome d = r - center => l = center - d. For example, s = "ababa": c = s[2], l = s[0], r = s[4], d = 2.  
+
+## Variables:
+ M - modified string, for example: "aba" -> "@#a#b#a#$"
+ C - center of palindrome. No need to check center between two characters since we use modified string
+ R - max index in M reached by expanding around center C
+ P - array. P[i] is max distance for palindrome with center i. 
+ 
 
 ```pytnon3
 def longestPalindrome(self, s: str) -> str:

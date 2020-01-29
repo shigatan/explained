@@ -18,7 +18,7 @@ Distance of palindrome d = r - center => l = center - d. For example, s = "ababa
  R - max index in M reached by expanding around center C
  P - array. P[i] is max distance for palindrome with center i. 
  
-
+## Source Code
 ```pytnon3
 def longestPalindrome(self, s: str) -> str:
         # O(N) Manacher
